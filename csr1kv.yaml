@@ -1,0 +1,12 @@
+---
+devnet_demo::ntp_servers::ntp:
+  '0.north-america.pool.ntp.org':
+    ensure: 'present'
+    prefer: true
+  'time1.google.com':
+    ensure: 'present'
+    source_interface: 'GigabitEthernet1'
+  'time.nist.gov':
+    ensure: 'present'
+    minpoll: 5
+    maxpoll: 12

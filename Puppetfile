@@ -16,3 +16,7 @@ mod 'puppetlabs-netdev_stdlib', '0.14.0'
 mod 'puppetlabs-cisco_ios',
   :git    => 'https://github.com/puppetlabs/cisco_ios.git',
   :branch => 'master'
+
+mod 'shermdog-devnet_demo',
+  :git    => 'https://github.com/shermdog/devnet_demo.git',
+  :branch => 'clus_2018'

@@ -21,6 +21,22 @@ file { '/root/.bash_profile':
   content => file(inline_template("<%= File.expand_path(File.dirname(__FILE__)) + '/bash_profile' %>")),
 }
 
+file { '/etc/puppetlabs/code/environments/production/data/nodes':
+  ensure => directory,
+  owner  => 'pe-puppet',
+  group  => 'pe-puppet',
+  mode   => '0644',
+}
+
+file { '/etc/puppetlabs/code/environments/production/data/nodes/csr1kv.yaml':
+  ensure => file,
+  owner  => 'pe-puppet',
+  group  => 'pe-puppet',
+  mode   => '0640',
+  content => file(inline_template("<%= File.expand_path(File.dirname(__FILE__)) + '/csr1kv.yaml' %>")),
+  require => File['/etc/puppetlabs/code/environments/production/data/nodes'],
+}
+
 # DevNet Sandbox (5/24/2018) has invalid known_hosts key
 file { '/root/.ssh/known_hosts':
   ensure => file,
