@@ -8,7 +8,7 @@ echo "Setting hostname..."
 /usr/bin/hostname -F /etc/hostname
 
 echo "Downloading Puppet Enterprise..."
-/usr/bin/curl -O https://s3.amazonaws.com/pe-builds/released/2018.1.1/puppet-enterprise-2018.1.1-el-7-x86_64.tar.gz
+/usr/bin/curl -O https://s3-us-west-2.amazonaws.com/devnet-puppet-bootstrap/puppet-enterprise-2018.1.1-el-7-x86_64.tar.gz
 
 echo "Extracting Puppet Enterprise..."
 /usr/bin/tar -xvf puppet-enterprise-2018.1.1-el-7-x86_64.tar.gz
